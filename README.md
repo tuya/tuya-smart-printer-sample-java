@@ -22,9 +22,9 @@ Tuya Android Smart Printer Sample 在基于[tuya-home-android-sdk-sample-java](h
 
 智能打印机设备控制界面如下：
 
-<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_1.jpg" style="zoom:20%;" />
+<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_1.jpg" width="30%;" />
 <br/>
-<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_2.jpg" style="zoom:20%;" />
+<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_2.jpg" width="30%;" />
 
 #### 三、使用须知
 
@@ -36,7 +36,8 @@ Tuya Android Smart Printer Sample 在基于[tuya-home-android-sdk-sample-java](h
 - 打印反馈
 
 交互图如下：
-<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_3.jpg" style="zoom:20%;" />
+<br/>
+<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_3.png" width="70%;" />
 
 <br/>
 
