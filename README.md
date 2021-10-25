@@ -20,7 +20,7 @@ Get started
 
 #### II. UI
 
-The following figure shows the UI of the smart printer panel:
+The following figures shows the UI of the smart printer panel:
 
 <img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_1.jpg" width="30%;" />
 <br/>
@@ -43,6 +43,7 @@ The following figure shows the interaction process.
 <br/>
 
 **Things to note**
+
 You must implement the following file upload feature:
 
 ```java
@@ -61,29 +62,29 @@ public class FileUploader extends AbsFileUploader {
 
 The following list describes the data points (DPs) that are created for the smart printer:
 
-101: the number of copies.
+- 101: the number of copies.
 
-102: send the first URL: The app saves the image to a third-party storage location and generates the URL for the printer to download the content. The number of copies to be printed is included in the URL.
+- 102: send the first URL: The app saves the image to a third-party storage location and generates the URL for the printer to download the content. The number of copies to be printed is included in the URL.
 
-110: send the second URL: Concatenate both URLs into a finished URL.
+- 110: send the second URL: Concatenate both URLs into a finished URL.
 
-103: start printing: The smart printer accesses the third-party storage location, downloads the image, and then gets ready for printing.
+- 103: start printing: The smart printer accesses the third-party storage location, downloads the image, and then gets ready for printing.
 
-104: printing status: the reason for a printing failure that possibly occurs.
+- 104: printing status: the reason for a printing failure that possibly occurs.
 
-105: an alert of a shortage of paper
+- 105: an alert of a shortage of paper
 
-106: display of the battery level: A value from 10% to 20% is not displayed.
+- 106: display of the battery level: A value from 10% to 20% is not displayed.
 
-107: low battery level alert
+- 107: low battery level alert
 
-108: the number of copies to be printed in the current task.
+- 108: the number of copies to be printed in the current task.
 
-109: the printing result that appears on the app.
+- 109: the printing result that appears on the app.
 
-111: the checksum `hmac`. It is the request parameter for the file download API method and is used to check whether the downloaded file is integral.
+- 111: the checksum `hmac`. It is the request parameter for the file download API method and is used to check whether the downloaded file is integral.
 
-112: the total size of the image `total_len`. It is the request parameter for the file download API method.
+- 112: the total size of the image `total_len`. It is the request parameter for the file download API method.
 
 Feedback
 ------------------------
