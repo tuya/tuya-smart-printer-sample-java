@@ -20,7 +20,7 @@ Get started
 
 #### II. UI
 
-The following figures shows the UI of the smart printer panel:
+The following figures show the UI of the smart printer panel:
 
 <img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_1.jpg" width="30%;" />
 <br/>
