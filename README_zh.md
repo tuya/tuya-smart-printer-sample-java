@@ -72,7 +72,7 @@ public class FileUploader extends AbsFileUploader {
 
 106.电量显示：10%~20%之间的值不显示
 
-107.低电量报警：当湿度高于最大湿度时，风扇会启动
+107.低电量报警
 
 108.正在打印份数：显示当前正在打印的份数
 
