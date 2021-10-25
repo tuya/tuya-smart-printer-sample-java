@@ -1,54 +1,56 @@
-Tuya Android Smart Planter Sample
+Tuya Smart Printer Sample for Android
 ========================
-功能概述
+Feature overview
 ------------------------
 
-Tuya Android Smart Printer Sample 提供简单示例用于对智能打印机的远程控制,该智能打印机基于Tuya IoTOS Embeded WiFi &Ble SDK实现。
+Tuya Smart Printer Sample for Android provides a simple example of remote control for smart printers. The features of this smart printer are implemented based on Tuya IoTOS Embedded Wi-Fi and Bluetooth Low Energy (LE) SDK.
 
-Tuya Android Smart Printer Sample 在基于[tuya-home-android-sdk-sample-java](https://github.com/tuya/tuya-home-android-sdk-sample-java) 的功能之上实现以下功能：
+Tuya Smart Printer Sample for Android supports the following feature on top of [tuya-home-android-sdk-sample-java](https://github.com/tuya/tuya-home-android-sdk-sample-java):
 
-- 智能打印机设备控制功能（富文本编辑、打印控制等）
+- Control the smart printer. For example, edit rich text and control printing.
 
-开始
+Get started
 ------------------------
 
-#### 一、项目配置
+#### I. Configure the project
 
-1、根据[准备工作](https://developer.tuya.com/zh/docs/app-development/android-app-sdk/preparation?id=Ka7mqlxh7vgi9)文档说明，注册涂鸦开发者账号，并完成应用的创建，将Sample的包名替换成创建时设置的包名。
+1. Based on the instructions in [Preparation for Integration](https://developer.tuya.com/en/docs/app-development/android-app-sdk/preparation?id=Ka7mqlxh7vgi9), register a Tuya developer account, create an application, and then specify the package name of the sample as the target application name.
 
-2、根据[集成SDK](https://developer.tuya.com/zh/docs/app-development/android-app-sdk/integration/integrated?id=Ka69nt96cw0uj)文档说明，集成安全图片以及重新设置AppKey和AppSecret。
+2. Based on the instructions in [Fast Integration with Smart Life App SDK for Android](https://developer.tuya.com/en/docs/app-development/android-app-sdk/integration/integrated?id=Ka69nt96cw0uj), configure the security image and reset the AppKey, and AppSecret.
 
-#### 二、界面
+#### II. UI
 
-智能打印机设备控制界面如下：
+The following figure shows the UI of the smart printer panel:
 
 <img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_1.jpg" width="30%;" />
 <br/>
 <img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_2.jpg" width="30%;" />
 
-#### 三、使用须知
+#### III. Usage notes
 
-智能打印机设备控制界面实现如下：
-- 打印内容富文本编辑器
-- 内容转单位图
-- 单位图上传云端获取下载链接（这部分需开发者自己实现）
-- 下发打印指令
-- 打印反馈
+The smart printer panel implements the following control features:
+- Edit rich text to be printed
+- Convert content into a one-bit .bmp file.
+- Upload the .bmp file to the cloud and get the download URL (depends on your implementation)
+- Send the printing command
+- Return the response of the printing request
 
-交互图如下：
-<br/>
-<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_3.png" width="70%;" />
+The following figure shows the interaction process.
 
 <br/>
+<img src="https://github.com/tuya/tuya-smart-printer-sample-java/blob/master/IMG/sample_img_4.jpg" width="70%;" />
 
-**特别注意**
-开发者需自己实现文件上传功能，如下
+<br/>
+
+**Things to note**
+You must implement the following file upload feature:
+
 ```java
 package com.tuya.appsdk.sample.printer;
 
 public class FileUploader extends AbsFileUploader {
 
-    @Override
+        @Override
     boolean uploadStart() {
         //TODO
         // Need to implement your own logic to upload files and get download links
@@ -57,42 +59,41 @@ public class FileUploader extends AbsFileUploader {
 }
 ```
 
-智能打印机DP控制点：
+The following list describes the data points (DPs) that are created for the smart printer:
 
-101.打印份数
+101: the number of copies.
 
-102.下发第一段url：app将图片存储到第三方，生成链接（包含打印份数）供设备下载
+102: send the first URL: The app saves the image to a third-party storage location and generates the URL for the printer to download the content. The number of copies to be printed is included in the URL.
 
-110.下发第二段url：将两段url拼接成完成的url
+110: send the second URL: Concatenate both URLs into a finished URL.
 
-103.开始打印：打印机访问第三方，下载图片成功后打印机就绪开始下载
+103: start printing: The smart printer accesses the third-party storage location, downloads the image, and then gets ready for printing.
 
-104.打印状态：可能导致打印失败的原因
+104: printing status: the reason for a printing failure that possibly occurs.
 
-105.缺纸警报
+105: an alert of a shortage of paper
 
-106.电量显示：10%~20%之间的值不显示
+106: display of the battery level: A value from 10% to 20% is not displayed.
 
-107.低电量报警：当湿度高于最大湿度时，风扇会启动
+107: low battery level alert
 
-108.正在打印份数：显示当前正在打印的份数
+108: the number of copies to be printed in the current task.
 
-109.打印结果：显示到app
+109: the printing result that appears on the app.
 
-111.校验值：hmac，文件下载API入参，用于校验下载后的文件是否完整
+111: the checksum `hmac`. It is the request parameter for the file download API method and is used to check whether the downloaded file is integral.
 
-112.图片总大小：total_len，文件下载API入参
+112: the total size of the image `total_len`. It is the request parameter for the file download API method.
 
-问题反馈
+Feedback
 ------------------------
 
-您可以通过**Github Issue** 或通过[**工单**](https://service.console.tuya.com)来进行反馈您所碰到的问题
+You can provide your feedback by submitting a **GitHub issue** or [**ticket**](https://service.console.tuya.com).
 
-LICENSE
+License
 ------------------------
-Tuya Android Smart Printer Sample是在MIT许可下提供的。更多信息请参考[LICENSE](LICENSE)文件
+Tuya Smart Printer Sample for Android is provided with the MIT license. For more information, see [LICENSE](LICENSE).
 
-Thanks
+References
 ------------------------
 - [richeditor-android](https://github.com/wasabeef/richeditor-android)
-
